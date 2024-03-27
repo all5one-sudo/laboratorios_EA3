@@ -12,13 +12,13 @@ Diseñar y construir un circuito doble sintonizado como el explicado con las sig
 
 ## Simulaciones
 
-![Circuito simulado en LTSpice](img\circuitoSim.png)
+![Circuito simulado en LTSpice](./img/circuitoSim.png)
 
 ### Respuesta en frecuencia
 
 De la simulación se obtiene el siguiente diagrama de Bode, que representa la respuesta en frecuencia de la tensión de salida.
 
-![Circuito simulado en LTSpice](img\circuitoBode.png)
+![Circuito simulado en LTSpice](./img/circuitoBode.png)
 
 ### Impedancia de entrada
 
@@ -56,7 +56,7 @@ A partir del dato del ancho de banda, se obtiene un valor de $Q_c = 12.01$.
 
 Se obtuvo el siguiente circuito prototipo.
 
-![Circuito simulado en LTSpice](img\construccion.jpg)
+![Circuito simulado en LTSpice](./img/construccion.jpg)
 
 ## Resultados de mediciones 
 
@@ -65,7 +65,7 @@ Las mediciones fueron realizadas en el pañol de la facultad, junto con los inst
 - Generador de funciones GW Instek AFG-2125 (código GFA02).
 - Osciloscopio Keysight DSO1052B (código OSC64).
 
-![Circuito simulado en LTSpice](img\medicion.jpg)
+![Circuito simulado en LTSpice](./img/medicion.jpg)
 
 
 Se muestra en la siguiente tabla el resultado de las mediciones realizadas sobre el dispositivo, así como las discrepancias con respecto al diseño planteado en la consigna.

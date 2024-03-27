@@ -43,7 +43,7 @@ Similar a la medición anterior, pero se mide ahora sobre la salida cargada y de
 De esa forma, se obtiene:
 
 $$
-Z_{in} = 815.56 \Omega
+Z_{out} = 815.56 \Omega
 $$
 
 ### Ancho de banda

@@ -1,0 +1,39 @@
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="simulacion_TP2_lib:cell_1:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+Short:DC_Feed2  N__14 N__5 Mode=-1 
+Short:DC_Feed1  N__10 N__12 Mode=-1 
+
+;#@# autodisplay="S_Params_Quad_dB_Smith"
+;#@# autodisplay="Circles_Ga_NF"
+
+IBB=1.29 mA
+VCE=1.0 V
+
+Options:Options1 Tnom=25 TopologyCheck=yes ForceS_Params=yes V_RelTol=1e-6 V_AbsTol=1e-6 V  \
+I_RelTol=1e-6 I_AbsTol=1e-12 A GiveAllWarnings=yes MaxWarnings=10 ForceM_Params=yes  \
+InitialGuessAnnotation=0 TopologyCheckMessages=no GPU=no doDeltaAC=no ReduceSPort=no  \
+ReduceSPortRatio=0.5 WarnSOA=yes MaxWarnSOA=5 Census=no MinNodalR=1e-2 Ohm LargeCapThreshold=1e-3 F 
+
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=yes SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=1.8 GHz Stop=1.8 GHz Step=.1 GHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+Port:Term2  N__7 0 Num=2 Z=50 Ohm Noise=yes 
+Short:DC_Block1  N__12 N__7 Mode=1 
+Short:IC  N__6 N__10 Mode=0 SaveCurrent=yes 
+V_Source:SRC1  N__6 0 Type="V_DC" Vdc=VCE SaveCurrent=1 
+I_Source:SRC2  0 N__5 Type="I_DC" Idc=IBB 
+Short:DC_Block2  N__3 N__14 Mode=1 
+Port:Term1  N__3 0 Num=1 Z=50 Ohm Noise=yes 
+#include "E:/Descargas/Infineon-RFTransistor-Keysight_ADS_Design_Kit-SM-v02_10-EN/Infineon_RF//circuit/models/BFP450_cktName.net" 
+BFP450_cktName:SNP1 N__12 N__14 0 File="BFP450_w_noise_VCE_1.0V_IC_0.10A.s2p" Temp=25 InterpMode="linear" InterpDom="" ExtrapMode="constant" CheckPassivity=0 

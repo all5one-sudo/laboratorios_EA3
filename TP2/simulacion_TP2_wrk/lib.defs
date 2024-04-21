@@ -1,0 +1,4 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+DEFINE simulacion_TP2_lib simulacion_TP2_lib
+ASSIGN simulacion_TP2_lib libMode shared
+INCLUDE E:/Descargas/Infineon-RFTransistor-Keysight_ADS_Design_Kit-SM-v02_10-EN/Infineon_RF/lib.defs

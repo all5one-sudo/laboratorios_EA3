@@ -4,20 +4,39 @@ hpeesofsim (*) 450.shp Jan 21 2016, MINT version 4
 Copyright 1995 - 2015 Keysight Technologies, 1989-2016.
 
 
-SP SP1[1] <simulacion_TP2_lib:cell_1:schematic>   freq=1.8 GHz
-.Warning detected by hpeesofsim during SP analysis `SP1'.
+AC AC1[1] <simulacion_TP2_lib:cell_1:schematic>   freq=(180 MHz->18 GHz)
+.Warning detected by hpeesofsim during AC analysis `AC1'.
     A virtual resistance of 1 TOhms was added to each node
-    during AC/SP analysis at 1.8 GHz.
-Warning detected by hpeesofsim during SP analysis `SP1'.
-    The simulation temperature (25.0 C) is not the same as the IEEE standard
-    noise temperature (290 K or 16.85 C) in the noise analysis `SP1'.
-    If the simulation temperature is not equal to the IEEE standard temperature,
-    then the loss and the noise figure will not agree for a passive circuit.
-    The `Temp' parameter on the Options item can be set to 16.85 C to
-    eliminate this warning message.
-
-
+    during AC/SP analysis at 180 MHz.
+.Warning detected by hpeesofsim during AC analysis `AC1'.
+    A virtual resistance of 1 TOhms was added to each node
+    during AC/SP analysis at 226.607 MHz.
+.Warning detected by hpeesofsim during AC analysis `AC1'.
+    A virtual resistance of 1 TOhms was added to each node
+    during AC/SP analysis at 285.281 MHz.
+.Warning detected by hpeesofsim during AC analysis `AC1'.
+    A virtual resistance of 1 TOhms was added to each node
+    during AC/SP analysis at 359.147 MHz.
+.Warning detected by hpeesofsim during AC analysis `AC1'.
+    A virtual resistance of 1 TOhms was added to each node
+    during AC/SP analysis at 452.14 MHz.
+.Warning detected by hpeesofsim during AC analysis `AC1'.
+    A virtual resistance of 1 TOhms was added to each node
+    during AC/SP analysis at 569.21 MHz.
+.Warning detected by hpeesofsim during AC analysis `AC1'.
+    A virtual resistance of 1 TOhms was added to each node
+    during AC/SP analysis at 716.593 MHz.
+.Warning detected by hpeesofsim during AC analysis `AC1'.
+    A virtual resistance of 1 TOhms was added to each node
+    during AC/SP analysis at 902.137 MHz.
+.Warning detected by hpeesofsim during AC analysis `AC1'.
+    A virtual resistance of 1 TOhms was added to each node
+    during AC/SP analysis at 1.13572 GHz.
+.Warning detected by hpeesofsim during AC analysis `AC1'.
+    A virtual resistance of 1 TOhms was added to each node
+    during AC/SP analysis at 1.42979 GHz.
+...........
 
 Resource usage:
-  Total stopwatch time     =     0.96 seconds.
+  Total stopwatch time     =     0.85 seconds.
 

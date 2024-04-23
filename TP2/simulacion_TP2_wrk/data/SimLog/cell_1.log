@@ -3,40 +3,12 @@ hpeesofsim (*) 450.shp Jan 21 2016, MINT version 4
     (64-bit windows built: 01/21/16 15:34:19)
 Copyright 1995 - 2015 Keysight Technologies, 1989-2016.
 
+Warning detected by hpeesofsim during netlist flattening.
+    Too many step specifiers given on `AC1_stim'.
 
 AC AC1[1] <simulacion_TP2_lib:cell_1:schematic>   freq=(180 MHz->18 GHz)
-.Warning detected by hpeesofsim during AC analysis `AC1'.
-    A virtual resistance of 1 TOhms was added to each node
-    during AC/SP analysis at 180 MHz.
-.Warning detected by hpeesofsim during AC analysis `AC1'.
-    A virtual resistance of 1 TOhms was added to each node
-    during AC/SP analysis at 226.607 MHz.
-.Warning detected by hpeesofsim during AC analysis `AC1'.
-    A virtual resistance of 1 TOhms was added to each node
-    during AC/SP analysis at 285.281 MHz.
-.Warning detected by hpeesofsim during AC analysis `AC1'.
-    A virtual resistance of 1 TOhms was added to each node
-    during AC/SP analysis at 359.147 MHz.
-.Warning detected by hpeesofsim during AC analysis `AC1'.
-    A virtual resistance of 1 TOhms was added to each node
-    during AC/SP analysis at 452.14 MHz.
-.Warning detected by hpeesofsim during AC analysis `AC1'.
-    A virtual resistance of 1 TOhms was added to each node
-    during AC/SP analysis at 569.21 MHz.
-.Warning detected by hpeesofsim during AC analysis `AC1'.
-    A virtual resistance of 1 TOhms was added to each node
-    during AC/SP analysis at 716.593 MHz.
-.Warning detected by hpeesofsim during AC analysis `AC1'.
-    A virtual resistance of 1 TOhms was added to each node
-    during AC/SP analysis at 902.137 MHz.
-.Warning detected by hpeesofsim during AC analysis `AC1'.
-    A virtual resistance of 1 TOhms was added to each node
-    during AC/SP analysis at 1.13572 GHz.
-.Warning detected by hpeesofsim during AC analysis `AC1'.
-    A virtual resistance of 1 TOhms was added to each node
-    during AC/SP analysis at 1.42979 GHz.
-...........
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 Resource usage:
-  Total stopwatch time     =     0.85 seconds.
+  Total stopwatch time     =     1.61 seconds.
 

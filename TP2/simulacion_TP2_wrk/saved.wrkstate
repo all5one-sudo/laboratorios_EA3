@@ -1,5 +1,8 @@
 <!DOCTYPE SaveWorkspaceState>
 <SaveWorkspaceState>
-    <Windows/>
+    <Windows>
+        <Schematic view="schematic" y1="-8" width="1920" height="1057" lib="simulacion_TP2_lib" x1="-8" cell="cell_1"/>
+        <DDS name="cell_1.dds"/>
+    </Windows>
     <MainWindowTab tab="1"/>
 </SaveWorkspaceState>

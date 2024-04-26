@@ -3,12 +3,18 @@ hpeesofsim (*) 450.shp Jan 21 2016, MINT version 4
     (64-bit windows built: 01/21/16 15:34:19)
 Copyright 1995 - 2015 Keysight Technologies, 1989-2016.
 
-Warning detected by hpeesofsim during netlist flattening.
-    Too many step specifiers given on `AC1_stim'.
 
-AC AC1[1] <simulacion_TP2_lib:cell_1:schematic>   freq=(180 MHz->18 GHz)
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+SP SP1[1] <simulacion_TP2_lib:cell_1:schematic>   freq=(180 MHz->18 GHz)
+Warning detected by hpeesofsim during SP analysis `SP1'.
+    Noise data in the Touchstone file `E:/descargas/infineon-rftransistor-keysight_ads_design_kit-sm-v02_10-en/infineon_rf/circuit/data/BFP450_w_noise_VCE_1.0V_IC_0.10A.s2p'
+    does not cover the current value of `freq'. Therefore, if noise
+    simulation is requested the data will be obtained by extrapolation.
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Warning detected by hpeesofsim during SP analysis `SP1'.
+    Data in the Touchstone file `E:/descargas/infineon-rftransistor-keysight_ads_design_kit-sm-v02_10-en/infineon_rf/circuit/data/BFP450_w_noise_VCE_1.0V_IC_0.10A.s2p'
+    does not cover the requested value of `freq'.
+    Therefore, the required data was obtained by extrapolation.
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 Resource usage:
-  Total stopwatch time     =     1.61 seconds.
+  Total stopwatch time     =     1.04 seconds.
 

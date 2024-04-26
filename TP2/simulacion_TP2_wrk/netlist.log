@@ -11,42 +11,40 @@ I_RelTol=1e-6 I_AbsTol=1e-12 A GiveAllWarnings=yes MaxWarnings=10 ForceM_Params=
 InitialGuessAnnotation=0 TopologyCheckMessages=no GPU=no doDeltaAC=no ReduceSPort=no  \
 ReduceSPortRatio=0.5 WarnSOA=yes MaxWarnSOA=5 Census=no MinNodalR=1e-2 Ohm LargeCapThreshold=1e-3 F 
 
-V_Source:SRC4  Vin 0 Type="V_1Tone" V[1]=polar(1,0) V Freq[1]=1.8 GHz    Vac=polar(1,0) V SaveCurrent=1 
 MLIN2:TL16  N__20 Vout Subst="MSub1" W=3.19 mm L=10 mm Mod=1 
 MLIN2:TL15  N__2 N__1 Subst="MSub1" W=3.19 mm L=10 mm Mod=1 
 MLIN2:TL14  N__7 N__6 Subst="MSub1" W=3.19 mm L=10 mm Mod=1 
-Short:DC_Block2  N__10 N__7 Mode=1 
-MLIN2:TL13  N__14 N__10 Subst="MSub1" W=3.19 mm L=10 mm Mod=1 
+Port:TermG1  Vin 0 Num=1 Z=50 Ohm Noise=yes 
+MLIN2:TL13  Vin N__10 Subst="MSub1" W=3.19 mm L=10 mm Mod=1 
 model MSub1 MSUB H=1.6 mm Er=4.15  Mur=1.0  Cond=4.1e7  Hu=3.9e+34 mm T=35 um TanD=0  Rough=0 mil DielectricLossModel=1 FreqForEpsrTanD=1.0e9  LowFreqForTanD=1.0e3  HighFreqForTanD=1.0e12  RoughnessModel=2 
-AC:AC1 CalcNoise=no SortNoise=0 IncludePortNoise=yes BandwidthForNoise=1 Hz FreqConversion=no UseFiniteDiff=no StatusLevel=2 OutputBudgetIV=no DevOpPtLevel=0 \
-SweepVar="freq" SweepPlan="AC1_stim" OutputPlan="AC1_Output" Freq=1.8 GHz 
+MLIN2:TL4  N__6 N__14 Subst="MSub1" W=7.29 mm L=22.5 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:TL8  N__18 N__2 Subst="MSub1" W=5.99 mm L=22.79 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+Port:TermG2  Vout 0 Num=2 Z=50 Ohm Noise=yes 
+#include "E:/Descargas/Infineon-RFTransistor-Keysight_ADS_Design_Kit-SM-v02_10-EN/Infineon_RF//circuit/models/BFP450_cktName.net" 
+BFP450_cktName:SNP1 N__18 N__14 0 File="BFP450_w_noise_VCE_1.0V_IC_0.10A.s2p" Temp=25 InterpMode="linear" InterpDom="" ExtrapMode="constant" CheckPassivity=0 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
-SweepPlan: AC1_stim Start=180 MHz Stop=18 GHz Step=1 MHz Dec=10 
+SweepPlan: SP1_stim Start=180 MHz Stop=18 GHz Step=10 MHz 
 
-OutputPlan:AC1_Output \
+OutputPlan:SP1_Output \
       Type="Output" \
-      UseNodeNestLevel=yes \
-      NodeNestLevel=2 \
       UseEquationNestLevel=yes \
       EquationNestLevel=2 \
       UseSavedEquationNestLevel=yes \
-      SavedEquationNestLevel=2 \
-      UseDeviceCurrentNestLevel=no \
-      DeviceCurrentNestLevel=0 \
-      DeviceCurrentDeviceType="All" \
-      DeviceCurrentSymSyntax=yes \
-      UseCurrentNestLevel=yes \
-      CurrentNestLevel=999 \
-      UseDeviceVoltageNestLevel=no \
-      DeviceVoltageNestLevel=0 \
-      DeviceVoltageDeviceType="All"
+      SavedEquationNestLevel=2
 
-MLOC2:TL3  N__13 Subst="MSub1" W=3.19 mm L=29mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL4  N__6 N__13 Subst="MSub1" W=7.29 mm L=22.5 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL8  N__18 N__2 Subst="MSub1" W=3.19 mm L=5.99 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLOC2:TL5  N__2 Subst="MSub1" W=3.19 mm L=4.99 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-Short:DC_Block3  N__1 N__20 Mode=1 
-#include "E:/Descargas/Infineon-RFTransistor-Keysight_ADS_Design_Kit-SM-v02_10-EN/Infineon_RF//circuit/models/BFP450_cktName.net" 
-BFP450_cktName:SNP1 N__18 N__13 0 File="BFP450_w_noise_VCE_1.0V_IC_0.10A.s2p" Temp=25 InterpMode="linear" InterpDom="" ExtrapMode="constant" CheckPassivity=0 
-R:R1  Vin N__14 R=50 Ohm Noise=yes 
-R:R2  Vout 0 R=50 Ohm Noise=yes 
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+MTAPER:Taper1  N__8 N__14 Subst="MSub1" W1=3.19 mm W2=2 mm L=5 mm 
+MLIN2:TL20  N__8 N__0 Subst="MSub1" W=3.19 mm L=13.4 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MGAP:Gap1  N__0 N__9 Subst="MSub1" W=3.19 mm S=0.5 mm 
+MGAP:Gap2  N__9 N__3 Subst="MSub1" W=3.19 mm S=0.5 mm 
+MLOC2:TL21  N__3 Subst="MSub1" W=3.19 mm L=0mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:TL22  N__15 N__5 Subst="MSub1" W=3.19 mm L=2 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MGAP:Gap3  N__12 N__13 Subst="MSub1" W=3.19 mm S=0.5 mm 
+MGAP:Gap4  N__5 N__12 Subst="MSub1" W=3.19 mm S=0.5 mm 
+MTAPER:Taper2  N__15 N__2 Subst="MSub1" W1=3.19 mm W2=2 mm L=3 mm 
+MLOC2:TL23  N__13 Subst="MSub1" W=3.19 mm L=0mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+C:C1  N__10 N__7 C=100 nF 
+C:C2  N__1 N__20 C=100 nF 

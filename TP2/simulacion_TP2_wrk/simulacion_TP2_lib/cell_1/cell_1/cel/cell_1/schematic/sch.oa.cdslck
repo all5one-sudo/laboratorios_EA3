@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      Usuario
+HostName                       DESKTOP-SRVE4T5
+ProcessIdentifier              11040
+ProcessCreationTime_UTC        1714059638
+ProcessCreationTime_Readable   04/25/24 12:40:38 Hora estándar de Argentina
+AppIdentifier                  OA File System Design Manager
+OSType                         win32
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         C:\Users\Usuario\OneDrive\Escritorio\Facultad\2024 1er semestre\ELECTRÃ“NICA ANALÃ“GICA 3\TP2\TP2_FEDE\TP2\simulacion_TP2_wrk\simulacion_TP2_lib\cell_1\schematic\sch.oa.cdslck
+TimeEditLocked                 04/25/24 12:41:11 Hora estándar de Argentina
